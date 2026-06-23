@@ -1,6 +1,7 @@
 import { Calendar, AlertTriangle, Megaphone, Users } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
+import { PageHero } from "../PageHero";
 
 export function NewsPage() {
   const announcements = [
@@ -118,15 +119,14 @@ export function NewsPage() {
   };
 
   return (
-    <div className="min-h-screen py-8">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="mb-4">News &amp; Announcements</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Stay informed about service updates, network maintenance, community events, and important announcements from TeleCoop Philippines.
-          </p>
-        </div>
+    <div className="min-h-screen">
+      <PageHero
+        title="News & Announcements"
+        subtitle="Stay informed about service updates, network maintenance, community events, and important announcements from TeleCoop Philippines."
+        imageUrl="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=80"
+        position="center 40%"
+      />
+      <div className="container mx-auto px-4 py-10">
 
         {/* Service Status */}
         <section className="mb-16">
@@ -218,53 +218,33 @@ export function NewsPage() {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="mb-16">
-          <Card className="bg-slate-50">
-            <CardHeader className="text-center">
-              <CardTitle>Stay Updated</CardTitle>
-              <p className="text-muted-foreground">
-                Subscribe to our newsletter to receive important announcements and updates directly in your inbox.
-              </p>
-            </CardHeader>
-            <CardContent>
-              <div className="max-w-md mx-auto">
-                <div className="flex space-x-2">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="flex-1 px-3 py-2 border border-border rounded-md"
-                  />
-                  <button className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">
-                    Subscribe
-                  </button>
-                </div>
-                <p className="text-xs text-muted-foreground mt-2 text-center">
-                  We respect your privacy and will only send relevant updates.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Archive Notice */}
-        <section className="text-center">
-          <Card>
-            <CardContent className="py-8">
-              <h3 className="mb-4">Looking for Older Announcements?</h3>
-              <p className="text-muted-foreground mb-4">
-                You can find archived announcements and news in our member portal or by contacting our office.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/90">
-                  View Archive
-                </button>
-                <button className="px-6 py-2 border border-border rounded-md hover:bg-slate-50">
-                  Contact Us
-                </button>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
+      </div>
+      <div
+        className="relative py-16 mb-0"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1562564055-71e051d33c19?w=1600&q=80')", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="absolute inset-0 bg-slate-900/85" />
+        <div className="relative container mx-auto px-4 text-center">
+          <h2 className="text-white mb-2">Stay Updated</h2>
+          <p className="text-slate-300 mb-6 max-w-lg mx-auto">
+            Subscribe to our newsletter to receive important announcements and updates directly in your inbox.
+          </p>
+          <div className="max-w-md mx-auto">
+            <div className="flex space-x-2">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="flex-1 px-3 py-2 border border-white/20 rounded-md bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:border-primary"
+              />
+              <button className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">
+                Subscribe
+              </button>
+            </div>
+            <p className="text-xs text-white/40 mt-2">
+              We respect your privacy and will only send relevant updates.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
