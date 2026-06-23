@@ -6,7 +6,6 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { Label } from "../ui/label";
-import { InteractiveMap } from "../InteractiveMap";
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
@@ -266,22 +265,161 @@ export function ContactPage() {
           </div>
         </section>
 
-        {/* Interactive Map */}
+        {/* Service Areas */}
         <section className="mb-16">
-          <h2 className="text-center mb-8">Our Location &amp; Service Areas</h2>
-          <Card>
-            <CardContent className="p-6">
-              <InteractiveMap />
-              <div className="mt-4 text-center">
-                <p className="text-muted-foreground mb-2">
-                  <strong>TeleCoop Main Office:</strong> Rm 3 2F Klir-Con Building, Rocka Avenue, Rocka Village, Tabang, Plaridel, Bulacan
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Click on the markers to view detailed information about our office and service areas.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <h2 className="text-center mb-2">Service Areas</h2>
+          <p className="text-center text-muted-foreground mb-8">
+            Region III — Central Luzon
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            {/* Bulacan — HQ province */}
+            <Card className="border-primary border-2">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-base">Bulacan</CardTitle>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider bg-primary text-white px-2 py-0.5 rounded-full">HQ Province</span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wide font-semibold">Municipalities / Cities</p>
+                <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
+                  {["Plaridel ★","Malolos","San Jose del Monte","Meycauayan","Marilao","Bocaue","Balagtas","Guiguinto","Calumpit","Hagonoy","Pulilan","Bustos","Baliuag","Angat","Norzagaray","Doña Remedios Trinidad","San Ildefonso","San Miguel","San Rafael","Santa Maria"].map(m => (
+                    <li key={m} className="text-sm text-muted-foreground flex items-start gap-1">
+                      <span className="text-primary mt-0.5 shrink-0">·</span>{m}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Pampanga */}
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base">Pampanga</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wide font-semibold">Municipalities / Cities</p>
+                <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
+                  {["San Fernando","Angeles City","Mabalacat","Guagua","Macabebe","Masantol","Mexico","Porac","Santa Ana","Apalit","Candaba","Floridablanca","Lubao","Sasmuan","San Luis","San Simon","Sta. Rita","Sto. Tomas"].map(m => (
+                    <li key={m} className="text-sm text-muted-foreground flex items-start gap-1">
+                      <span className="text-primary mt-0.5 shrink-0">·</span>{m}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Nueva Ecija */}
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base">Nueva Ecija</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wide font-semibold">Municipalities / Cities</p>
+                <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
+                  {["Cabanatuan","San Jose","Palayan","Gapan","Muñoz","Talavera","Guimba","Zaragoza","Aliaga","Bongabon","Cuyapo","Laur","Licab","Llanera","Lupao","Nampicuan","Peñaranda","Quezon","Rizal","San Isidro","San Leonardo","Santa Rosa","Sto. Domingo","Gabaldon"].map(m => (
+                    <li key={m} className="text-sm text-muted-foreground flex items-start gap-1">
+                      <span className="text-primary mt-0.5 shrink-0">·</span>{m}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Tarlac */}
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base">Tarlac</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wide font-semibold">Municipalities / Cities</p>
+                <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
+                  {["Tarlac City","Capas","Concepcion","Victoria","Bamban","Camiling","Gerona","La Paz","Mayantoc","Moncada","Paniqui","Pura","Ramos","San Clemente","San Jose","San Manuel","Santa Ignacia"].map(m => (
+                    <li key={m} className="text-sm text-muted-foreground flex items-start gap-1">
+                      <span className="text-primary mt-0.5 shrink-0">·</span>{m}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Zambales */}
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base">Zambales</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wide font-semibold">Municipalities / Cities</p>
+                <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
+                  {["Olongapo City","Subic","San Antonio","Iba","Castillejos","San Marcelino","San Narciso","Botolan","Cabangan","Masinloc","Palauig","Sta. Cruz","Candelaria"].map(m => (
+                    <li key={m} className="text-sm text-muted-foreground flex items-start gap-1">
+                      <span className="text-primary mt-0.5 shrink-0">·</span>{m}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Bataan + Aurora */}
+            <div className="flex flex-col gap-6">
+              <Card>
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base">Bataan</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wide font-semibold">Municipalities / Cities</p>
+                  <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
+                    {["Balanga","Mariveles","Orani","Hermosa","Abucay","Bagac","Dinalupihan","Limay","Morong","Orion","Pilar","Samal"].map(m => (
+                      <li key={m} className="text-sm text-muted-foreground flex items-start gap-1">
+                        <span className="text-primary mt-0.5 shrink-0">·</span>{m}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base">Aurora</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wide font-semibold">Municipalities / Cities</p>
+                  <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
+                    {["Baler","Casiguran","Dingalan","Dipaculao","Maria Aurora","San Luis"].map(m => (
+                      <li key={m} className="text-sm text-muted-foreground flex items-start gap-1">
+                        <span className="text-primary mt-0.5 shrink-0">·</span>{m}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+          </div>
+
+          {/* Plaridel barangays */}
+          <div className="mt-8">
+            <Card className="bg-accent/30">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-primary" />
+                  Plaridel, Bulacan — Barangays Served
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">TeleCoop's home municipality · Rm 3 2F Klir-Con Building, Rocka Avenue, Rocka Village, Tabang</p>
+              </CardHeader>
+              <CardContent>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-1.5">
+                  {["Agnaya","Bagong Silang","Banga I","Banga II","Bintog","Bulihan","Culianin","Dampol I","Dampol II-A","Dampol II-B","Document","Garlang","Linya","Lumbang","Malipampang","Mataas na Parang","Niugan","Parulan","Poblacion","Pulong Yantok","Rueda","San Jose","Santa Ines","Santo Cristo","Santo Niño","Tabang","Tulungatung","Wawa"].map(b => (
+                    <li key={b} className="text-sm text-muted-foreground flex items-start gap-1">
+                      <span className="text-primary mt-0.5 shrink-0">·</span>{b}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         {/* Social Media */}
