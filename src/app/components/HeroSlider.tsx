@@ -63,7 +63,7 @@ export function HeroSlider({ onNavigate, slides = DEFAULT_SLIDES }: HeroSliderPr
 
   return (
     <div
-      className="relative w-full h-[580px] overflow-hidden"
+      className="relative w-full h-screen overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
